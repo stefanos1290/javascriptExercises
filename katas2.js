@@ -317,8 +317,90 @@ console.log('22:',buy(6, [5, 2, 5, 1]));
 // 23
 
 function coinCombo(cents) {
-    const coins = [25, 10, 5, 1];
-    return cents
+    return 'TODO'
 }
 
 console.log('23:',coinCombo(52));
+
+// JavaScript Katas: Split In Parts
+// 24
+
+function splitInParts(myString, partLength) {
+    let remaining = myString;
+    let results = '';
+    while (remaining.length >= partLength) {
+        results += remaining.slice(0, partLength) + ' ';
+        remaining = remaining.slice(partLength)
+    }
+    results += remaining
+    return results
+}
+
+console.log('24:',splitInParts('HelloDev', 7));
+
+// JavaScript Katas: Higher Version
+// 25
+
+function higherVersion(version1, version2) {
+    const version1Split = version1.split('.');
+    const version2Split = version2.split('.');
+    let num1 = [];
+    let num2 = [];
+    for (let i = 0; i < version1Split.length; i++) {
+        num1.push(version1Split[i].replace(/^0+/, ''))
+    }
+    for (let i = 0; i < version2Split.length; i++) {
+        num2.push(version2Split[i].replace(/^0+/, ''))
+    }
+    
+    // return num2
+    return 'TODO'
+
+}
+
+console.log('25:',higherVersion('1.0020.003', '1.2.0'));
+
+// JavaScript Katas: Merge Two Arrays
+// 26
+
+function mergeArrays(a, b) {
+    const mergedArray = [];
+    const bigestArray = a.length > b.length ? a.length : a.length < b.length ? b.length : b.length;
+    for (let i = 0; i < bigestArray; i++) {
+        mergedArray.push(a[i])
+        mergedArray.push(b[i])
+    }
+    return mergedArray.filter((x) => x !== undefined)
+}
+
+console.log('26:',mergeArrays([9, 10, 11], ["a", 'b']));
+
+// JavaScript Katas: Find Odd Digits
+// 27
+
+function findOddDigits(n, k) {
+    const oddDigits = [];
+    const slpitNumber = n.toString().split('');
+
+    if (k > n || k === 0) {
+        return 0
+    }
+
+    for (let i = 0; i < slpitNumber.length; i++) {
+        if (Number(slpitNumber[i]) % 1 === 0) {
+            oddDigits.push(Number(slpitNumber[i]))
+        }
+    }
+    return oddDigits.length <= 0 ? 0 : k > oddDigits.length ? 0 : oddDigits.slice(0, k)
+}
+
+console.log('27:',findOddDigits(123456789111, 5));
+
+// JavaScript Katas: Draw Chessboard
+// 28
+
+function drawChessboard(rows, columns) {
+    return 28
+}
+
+console.log('28:',drawChessboard(3, 3));
